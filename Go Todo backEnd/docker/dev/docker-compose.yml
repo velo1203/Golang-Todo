@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: omHO7EEzHm52s9DlZD70P6KPKm2TbODC
+      MYSQL_DATABASE: boilerplate
+    ports:
+      - "33061:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+  app:
+    build:
+      context: ../../
+      dockerfile: docker/dev/Dockerfile
+    image: studioj/boilerplate_app:dev
+    ports:
+      - "3030:3030"
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: omHO7EEzHm52s9DlZD70P6KPKm2TbODC
+      DB_NAME: boilerplate
+    depends_on:
+      - db
+    restart: always
+volumes:
+  db-data:

@@ -1,0 +1,5 @@
+package config
+
+const PORT = ":3030"
+const DATABASE_URL = "root:omHO7EEzHm52s9DlZD70P6KPKm2TbODC@tcp(localhost:3306)/boilerplate?charset=utf8&parseTime=True&loc=Local"
+const SECRET_KEY = "5a14e06d-55a3-418c-9f3f-8fde328d6c49"

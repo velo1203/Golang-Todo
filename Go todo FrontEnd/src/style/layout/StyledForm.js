@@ -13,7 +13,7 @@ text-align: center;
 
 `;
 
-export const StyledForm = styled.form`
+export const StyledForm = styled.div`
 margin-top: 50px;
 display: flex;
 flex-direction: column;
