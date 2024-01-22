@@ -18,7 +18,7 @@ func main() {
 }
 
 func Init() {
-	database.Init()
+	database.Init() //database init
 	routers.Init()
 	database.AutoMigrate()
 	log.Println(configs.PORT, " server started")
