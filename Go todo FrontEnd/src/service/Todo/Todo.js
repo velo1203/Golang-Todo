@@ -11,16 +11,6 @@ const getTodo = async () => {
     throw error;
   }
 };
-// GET 요청
-const SearchTodo = async (keyword) => {
-  try {
-    const response = await apiClient.get('/todos?id='+keyword);
-    return response.data;
-  } catch (error) {
-    console.error('GET Request Error:', error);
-    throw error;
-  }
-};
 // POST 요청
 const postTodo = async (title) => {
   const todo = {title: title};

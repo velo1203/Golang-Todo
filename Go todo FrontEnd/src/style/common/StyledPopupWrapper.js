@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledPopupWrapper = styled.div`
+export const StyledPopupWrapper = styled.div `
 
     position: fixed;
     z-index: 100;

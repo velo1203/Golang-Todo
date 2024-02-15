@@ -6,7 +6,7 @@ import { postTodo } from "../../service/Todo/Todo";
 
 
 
-function AddTodo({onTodoAdded}) {
+function AddTodo({onTodoAdded,handleClose}) {
   const [todo, setTodo] = useState('');
 
   const TodoPost = async () => {
@@ -19,11 +19,15 @@ function AddTodo({onTodoAdded}) {
             alert('투두가 생성되지 않았습니다.')
     }
 }
+const handleSubmit = ()=>{
+    TodoPost()
+    handleClose()
+}
 
   return (
     <StyledAddTodo>
       <StyledInput placeholder="할 일을 입력하세요" onChange={(e)=>{setTodo(e.target.value)}}/>
-      <StyledButton onClick={()=>{TodoPost()}}>추가</StyledButton>
+      <StyledButton onClick={()=>{handleSubmit()}}>추가</StyledButton>
     </StyledAddTodo>
   );
 }
